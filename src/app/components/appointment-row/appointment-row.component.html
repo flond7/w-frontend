@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-2">icona Data</div>
+  <div class="col-md-2">Tipologia</div>
+  <div class="col-md-2">Operatrice 1</div>
+  <div class="col-md-2">Operatrice 2</div>
+  <div class="col-md-1">Percorso</div>
+  <div class="col-md-2">Sportello</div>
+</div>
+
+<div *ngFor="let appointment of appointments" class="row">
+  <div class="col-md-2">{{appointment.path}} {{appointment.appointmentDay}}</div>
+  <div class="col-md-2">{{appointment.meetingType}}</div>
+  <div class="col-md-2">{{appointment.personOne}}</div>
+  <div class="col-md-2">{{appointment.personTwo}}</div>
+  <div class="col-md-2">{{appointment.appointmentPlace}}</div>
+  <div class="col-md-2">
+    <div class="">Report YES</div>
+    <div class="" (click)="seeAppointment(appointment.id)" >See</div>
+  </div>
+</div>
