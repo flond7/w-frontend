@@ -1,4 +1,4 @@
-# NgStarter13ng
+# NgStarter13
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5ng serve.
 - HEAD: master
 
@@ -50,4 +50,4 @@ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git (change rep
 - PROBLEM: doesn't find runtime.js or other files, check if base is correct in index.html
 
 SASS
-- ~ (alt126) will tell Sass to look in the src/
+- ~ (alt126) will tell Sass to look in the src/ (DEPRECATED IN ANG 13)
