@@ -1,20 +1,39 @@
 <div class="row">
-  <div class="col-md-2">icona Data</div>
+  <div class="col-md-1"> </div>
+  <div class="col-md-1" (click)="sortArray(this.appointments, 'appointmentDay', true)">Data </div>
+  <div class="col-md-1" (click)="sortArray(this.appointments, 'appointmentPlace', false)">Sportello</div>
   <div class="col-md-2">Tipologia</div>
-  <div class="col-md-2">Operatrice 1</div>
-  <div class="col-md-2">Operatrice 2</div>
-  <div class="col-md-1">Percorso</div>
-  <div class="col-md-2">Sportello</div>
+  <div class="col-md-3">Operatrici</div>
+  <div class="col-md-1 d-flex justify-content-center">Durata</div>
+  <div class="col-md-1">Report</div>
+  <div class="col-md-2"></div>
 </div>
 
-<div *ngFor="let appointment of appointments" class="row">
-  <div class="col-md-2">{{appointment.path}} {{appointment.appointmentDay}}</div>
-  <div class="col-md-2">{{appointment.meetingType}}</div>
-  <div class="col-md-2">{{appointment.personOne}}</div>
-  <div class="col-md-2">{{appointment.personTwo}}</div>
-  <div class="col-md-2">{{appointment.appointmentPlace}}</div>
-  <div class="col-md-2">
-    <div class="">Report YES</div>
-    <div class="" (click)="seeAppointment(appointment.id)" >See</div>
+<div *ngFor="let appointment of appointments" class="row mt-3 pb-3 align-items-center border-bottom-muted">
+  <div class="col-md-1 d-flex">
+    <div class="">{{appointment.path}}</div>
+    <div *ngIf="appointment.contact === 'phone'" class="mx-4 icon"><fa-icon [icon]="faPhone"></fa-icon></div>
+    <div *ngIf="appointment.contact === 'web'" class="mx-4 icon"><fa-icon [icon]="faWifi"></fa-icon></div>
+    <div *ngIf="appointment.contact === 'direct'" class="mx-4 icon"><fa-icon [icon]="faPersonDress"></fa-icon></div>
   </div>
+  <div class="col-md-1">{{appointment.appointmentDay}}</div>
+  <div class="col-md-1">{{appointment.appointmentPlace}}</div>
+  <div class="col-md-2">{{appointment.meetingType}}</div>
+  <div class="col-md-3">{{appointment.personOne}}, {{appointment.personTwo}}</div>
+  <div class="col-md-1 d-flex justify-content-center">{{appointment.duration}}</div>
+  <div class="col-md-1">
+    <div *ngIf="appointment.report.length > 0" class="text-light-success font-weight-bold">Completato</div>
+    <div *ngIf="appointment.report.length === 0" class="text-light-danger font-weight-bold">Vuoto</div>
+  </div>
+  <div class="col-md-2 d-flex justify-content-end">
+    <div class="button bg-primary rounded p-1 mx-1 d-flex justify-content-center align-items-center small-button" (click)="seeAppointment(appointment.id)">
+      <fa-icon [icon]="faPencil"></fa-icon>
+    </div>
+    <div class="button bg-primary rounded p-1 mx-1 d-flex justify-content-center align-items-center small-button" (click)="seeAppointment(appointment.id)">
+      <fa-icon [icon]="faCopy"></fa-icon>
+    </div>
+    <div class="button bg-primary rounded p-1 mx-1 d-flex justify-content-center align-items-center small-button" (click)="seeAppointment(appointment.id)">
+      <fa-icon [icon]="faPencil"></fa-icon>
+    </div>
+</div>
 </div>

@@ -1,6 +1,42 @@
 @import "~bootstrap/dist/css/bootstrap.css"
+@import "variables" //on-top
 
 /* You can add global styles to this file, and also import other style files */
 html, body
-  background: #333
+  background: #242323
   color: #fff
+input, select, textarea
+  min-height: 30px
+  border-radius: 0.3rem
+  border: none
+  background-color: #1a1a1a
+  color: #fff
+  padding: 0 0.5rem
+
+.bigger
+  font-size: 1.3rem
+
+/* BUTTONS */
+.small-button
+  width: 40px
+  height: 35px
+
+.border-bottom-muted
+  border-bottom: 1px solid #515151
+
+/* BOOTSTRAP REWIREING */
+.bg-primary
+  background-color: $primary
+.bg-success
+  background-color: $success-light
+.bg-danger
+  background-color: $danger-light
+
+.text-light-success
+  color: $success-light
+.text-light-danger
+  color: $danger-light
+
+label
+  margin-bottom: 0.5rem
+    margin-top: 0.5rem

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { faWifi, faPersonDress, faPhone, faPencil, faSquareXmark, faSquareCheck, faCopy } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-appointment-row',
@@ -6,15 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appointment-row.component.sass']
 })
 export class AppointmentRowComponent implements OnInit {
-  appointments = [
-   {id: 1, meetingType: "direct", path: "p1", appointmentDay: "12-12-2022", appointmentPlace: "Maniago", personOne: "One", personTwo: "Two", volounteer: ""},
-   {id: 2, meetingType: "direct", path: "p1", appointmentDay: "12-12-2022", appointmentPlace: "Maniago", personOne: "One", personTwo: "Two", volounteer: "" }
- ]
+
+  faWifi = faWifi;
+  faPersonDress = faPersonDress;
+  faPhone = faPhone;
+  faPencil = faPencil;
+  faSquareCheck = faSquareCheck;
+  faSquareXmark = faSquareXmark;
+  faCopy = faCopy;
+
+  @Input() appointments: any;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  sortArray(arrayToSort: any, criteria: string, isItADate: boolean) {
+    if (isItADate === true) {
+      console.log('inside');
+      arrayToSort.sort((a: any, b: any) => a[criteria] - b[criteria])
+    } else {
+          console.log('outside');
+      arrayToSort.sort((a: any, b: any) => (a[criteria] > b[criteria]) ? 1 : ((b[criteria] > a[criteria]) ? -1 : 0))
+
+    }
+
+    //arrayToSort.sort((a: any, b: any) => (a[criteria] > b[criteria]) ? 1 : ((b[criteria] > a[criteria]) ? -1 : 0))
   }
+
+
 
   seeAppointment(appointmentId: any) {
     console.log(appointmentId)
