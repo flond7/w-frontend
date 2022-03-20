@@ -1,54 +1,68 @@
 <div class="container">
-  <div class="row">
+
+  <div class="row mb-2">
     <div class="col-md-2">
       <label>Data colloquio</label>
-      <input type="datetime" class="">
+      <input type="datetime" class="w-100">
+    </div>
+    <div class="col-md-1 p-0">
+      <label>Natura</label>
+      <div class="d-flex justify-content-between">
+        <div class="btn d-flex justify-content-center align-items-center rounded mini-select mr-1" [ngClass]="{'bg-primary': appointment.nature === 'person'}" (click)="this.appointment.nature = 'person'">
+          <fa-icon [icon]="faPersonDress"></fa-icon>
+        </div>
+        <div class="btn d-flex justify-content-center align-items-center rounded mini-select mr-1" [ngClass]="{'bg-primary': appointment.nature === 'phone'}" (click)="this.appointment.nature = 'phone'">
+          <fa-icon [icon]="faPhone"></fa-icon>
+        </div>
+        <div class="btn d-flex justify-content-center align-items-center rounded mini-select mr-1" [ngClass]="{'bg-primary': appointment.nature === 'web'}" (click)="this.appointment.nature = 'web'">
+          <fa-icon [icon]="faWifi"></fa-icon>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <label class="w-100">Tipologia colloquio</label>
+      <select class="w-100" [(ngModel)]="appointment.type">
+        <option *ngFor="let p of appointmentTypeList" [ngValue]="p">{{p}}</option>
+      </select>
     </div>
     <div class="col-md-5">
       <label>Sportello</label>
       <div class="row mx-0 justify-content-between">
-        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Sacile'}" class="button d-flex justify-content-center align-items-center my-auto rounded select-choice">Sacile</div>
-        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Maniago'}" class="button d-flex justify-content-center align-items-center my-auto rounded select-choice">Maniago</div>
-        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Pordenone'}" class="button d-flex justify-content-center align-items-center my-auto rounded select-choice">Pordenone</div>
-        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Spilimbergo'}" class="button d-flex justify-content-center align-items-center my-auto rounded select-choice">Spilimbergo</div>
+        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Sacile'}" class="btn d-flex justify-content-center align-items-center my-auto rounded select-choice">Sacile</div>
+        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Maniago'}" class="btn d-flex justify-content-center align-items-center my-auto rounded select-choice">Maniago</div>
+        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Pordenone'}" class="btn d-flex justify-content-center align-items-center my-auto rounded select-choice">Pordenone</div>
+        <div [ngClass]="{'bg-primary': appointment.appointmentPlace === 'Spilimbergo'}" class="btn d-flex justify-content-center align-items-center my-auto rounded select-choice">Spilimbergo</div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-2">
-        <label>Data colloquio</label>
-        <input type="datetime" class="">
-      </div>
-      <div class="col-md-2">
-        <label>Data colloquio</label>
-        <input type="datetime" class="">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3">
-        <label class="w-100">Operatrice 1</label>
-        <select class="w-100" [(ngModel)]="appointment.personOne">
-          <option *ngFor="let p of persons" [ngValue]="p">{{p.name}} {{p.surname}}</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <label class="w-100">Operatrice 2</label>
-        <select class="w-100" [(ngModel)]="appointment.personTwo">
-          <option *ngFor="let p of persons" [ngValue]="p">{{p.name}} {{p.surname}}</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <label class="w-100">Volontaria</label>
-        <input class="w-100" type="text" [(ngModel)]="appointment.volunteer">
-      </div>
-    </div>
-
-    <div class="row ">
-      <div class="col-md-12">
-        <label class="w-100">Report</label>
-        <textarea class="w-100" rows="10" [(ngModel)]="appointment.report"></textarea>
-      </div>
-    </div>
+  </div>
+  <div class="row mb-2">
 
   </div>
+
+  <div class="row mb-2">
+    <div class="col-md-3">
+      <label class="w-100">Operatrice 1</label>
+      <select class="w-100" [(ngModel)]="appointment.personOne">
+        <option *ngFor="let p of peopleList" [ngValue]="p">{{p.name}} {{p.surname}}</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label class="w-100">Operatrice 2</label>
+      <select class="w-100" [(ngModel)]="appointment.personTwo">
+        <option *ngFor="let p of peopleList" [ngValue]="p">{{p.name}} {{p.surname}}</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label class="w-100">Volontaria</label>
+      <input class="w-100" type="text" [(ngModel)]="appointment.volunteer">
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col-md-12">
+      <label class="w-100">Report</label>
+      <textarea class="w-100" rows="10" [(ngModel)]="appointment.report"></textarea>
+    </div>
+  </div>
+
 </div>
