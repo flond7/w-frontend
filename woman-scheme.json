@@ -1,0 +1,14 @@
+{
+  "appointments": [
+    { "appointmentDay": "",
+      "appointmentPlace":"Pordenone",
+      "personOne": "",
+      "personTwo": "",
+      "volunteer": "",
+      "services": [
+        {"name": "nome-servizio", "value": "cav", "id": 1},  //values options: 'cav', 'other', 'both'
+        {"name": "nome-servizio", "value": "cav", "id": 2}   //id for eventual istat translation
+      ]
+    }
+  ]
+}
