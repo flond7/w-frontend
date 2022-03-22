@@ -9,13 +9,15 @@ import { AppointmentRowComponent } from './components/appointment-row/appointmen
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewAppointmentComponent } from './components/view-appointment/view-appointment.component';
 import { ViewAppointmentListComponent } from './components/view-appointment-list/view-appointment-list.component';
+import { ServiceRowComponent } from './components/service-row/service-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppointmentRowComponent,
     ViewAppointmentComponent,
-    ViewAppointmentListComponent
+    ViewAppointmentListComponent,
+    ServiceRowComponent
   ],
   imports: [
     BrowserModule,

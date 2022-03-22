@@ -1,0 +1,30 @@
+<div class="">
+  <h2 class="w-100 border-bottom-muted pb-2 mb-4">Servizi</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor="let s of servicesOne" class="d-flex justify-content-between mb-2">
+        <div class="col-md-5 my-auto">{{s.name}}</div>
+        <div class="col-md-7 d-flex justify-content-between">
+          <div class="btn select-choice mr-2" [ngClass]="{'bg-primary': servicesValues[s.name] === 'cav'}" (click)="setServiceValue(s.name, 'cav')">CAV</div>
+          <div class="btn select-choice mr-2" [ngClass]="{'bg-primary': servicesValues[s.name] === 'other'}" (click)="setServiceValue(s.name, 'other')">Altro servizio</div>
+          <div class="btn select-choice" [ngClass]="{'bg-primary': servicesValues[s.name] === 'both'}" (click)="setServiceValue(s.name, 'both')">CAV e altro</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngFor="let s of servicesTwo" class="d-flex justify-content-between mb-2">
+        <div class="col-md-5 my-auto">{{s.name}}</div>
+        <div class="col-md-7 d-flex justify-content-between">
+          <div class="btn select-choice mr-2" [ngClass]="{'bg-primary': servicesValues[s.name] === 'cav'}" (click)="setServiceValue(s.name, 'cav')">CAV</div>
+          <div class="btn select-choice mr-2" [ngClass]="{'bg-primary': servicesValues[s.name] === 'other'}" (click)="setServiceValue(s.name, 'other')">Altro servizio</div>
+          <div class="btn select-choice" [ngClass]="{'bg-primary': servicesValues[s.name] === 'both'}" (click)="setServiceValue(s.name, 'both')">CAV e altro</div>
+        </div>
+      </div>
+      <div *ngIf="servicesValues['Altro'] !== ''" class="d-flex">
+        <div class="col-md-5 my-auto">Specificare gli altri servizi offerti</div>
+        <input class="w-100" type="text">
+      </div>
+    </div>
+
+  </div>
+</div>
