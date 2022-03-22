@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewAppointmentComponent } from './components/view-appointment/view-appointment.component';
 import { ViewAppointmentListComponent } from './components/view-appointment-list/view-appointment-list.component';
 import { ServiceRowComponent } from './components/service-row/service-row.component';
+import { AccordionRowsComponent } from './components/accordion-rows/accordion-rows.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ServiceRowComponent } from './components/service-row/service-row.compon
     AppointmentRowComponent,
     ViewAppointmentComponent,
     ViewAppointmentListComponent,
-    ServiceRowComponent
+    ServiceRowComponent,
+    AccordionRowsComponent
   ],
   imports: [
     BrowserModule,
