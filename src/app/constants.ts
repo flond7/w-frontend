@@ -8,7 +8,7 @@ export const LIST_APPOINTMENT_TYPE: any = [
   "Ascolto/Accoglienza", "Legale", "In casa rifugio"
 ]
 
-export const LIST_SERIVICE: any = [
+export const LIST_SERVICE: any = [
   { name: "Pronto intervento/Messa in sicurezza", id: 1 },
   { name: "Ascolto", id: 2 },
   { name: "Accoglienza", id: 4 },
